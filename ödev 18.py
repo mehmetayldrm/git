@@ -3,13 +3,13 @@ from tkinter import ttk
 
 class Veritabani:
     def __init__(self):
-        self.olyalar = []
+        self.olaylar = []
 
     def olay_ekle(self, olay):
-        self.olyalar.append(olay)
+        self.olaylar.append(olay)
 
     def olay_sorgula(self, olay_adi):
-        for olay in self.olyalar:
+        for olay in self.olaylar:
             if olay["adi"] == olay_adi:
                 return olay
         return None
@@ -38,7 +38,7 @@ def olay_ekle():
 
 def listele_olaylar():
     tree.delete(*tree.get_children())
-    for olay in veritabani.olyalar:
+    for olay in veritabani.olaylar:
         tree.insert('', 'end', values=(olay["adi"], olay["tarih"], olay["aciklama"], ', '.join(olay["sahsiyetler"]), olay["donem"]))
 
 def sorgula():
